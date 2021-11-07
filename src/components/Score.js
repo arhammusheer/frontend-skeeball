@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function Score(props) {
-
   const speech = useSpeechSynthesis();
   const say = (text) => {
     speech.speak({
@@ -16,7 +15,6 @@ export default function Score(props) {
     say(`You have ${props.score} points!`);
   }, [props.score]);
 
-  
   return (
     <Box
       border
@@ -27,8 +25,10 @@ export default function Score(props) {
       p={5}
       m={1}
     >
-      <Heading size={"4xl"} fontSize={"200"}>{props.score}</Heading>
-      <Text>{props.score.name}</Text>
+      <Heading size={"4xl"} fontSize={"200"}>
+        {props.score}
+      </Heading>
+      <Text>{props.name}</Text>
     </Box>
   );
 }

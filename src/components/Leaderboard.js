@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/layout";
 import { Table, Thead, Th, Tr, Td, Tbody } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 
 export default function Leaderboard({ table }) {
   // useEffect(() => {
@@ -25,17 +24,10 @@ export default function Leaderboard({ table }) {
         </Thead>
         <Tbody>
           {table.map((row, index) => {
-            if (row.name && row.score) {
-              return (
-                <Tr key={`${index}-${row.name}`}>
-                  <Td>{row.name}</Td>
-                  <Td isNumeric>{row.score}</Td>
-                </Tr>
-              );
-            }
             return (
-              <Tr>
-                <Td>No scores yet</Td>
+              <Tr key={`${index}-${row.name}`}>
+                <Td>{row.name}</Td>
+                <Td isNumeric>{row.score}</Td>
               </Tr>
             );
           })}
